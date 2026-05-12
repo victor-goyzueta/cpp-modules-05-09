@@ -7,6 +7,25 @@ int main()
 {
 	try
 	{
+		Bureaucrat a;
+		Bureaucrat b(a);
+		Bureaucrat c ("Bob", 1);
+
+		std::cout << a << std::endl;
+		std::cout << b << std::endl;
+		std::cout << c << std::endl;
+
+		a = c;
+
+		std::cout << a << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	try
+	{
 		Bureaucrat	b1("Alice", 1);
 		std::cout << b1 << std::endl;
 
