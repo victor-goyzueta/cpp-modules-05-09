@@ -21,16 +21,16 @@ Bureaucrat::Bureaucrat( const Bureaucrat& copy ) : _name(copy._name)
 
 Bureaucrat::~Bureaucrat() {}
 
-std::string Bureaucrat::getName() const
-{
-	return (_name);
-}
-
 Bureaucrat& Bureaucrat::operator=( const Bureaucrat& other )
 {
 	if (this != &other)
 		this->_grade = other._grade;
 	return (*this);
+}
+
+std::string Bureaucrat::getName() const
+{
+	return (_name);
 }
 
 int Bureaucrat::getGrade() const

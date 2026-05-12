@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+Form::Form() : _name("default"), _isSigned(false), _gradeToSign(1), _gradeToExecute(1) {}
+
 Form::Form( std::string name, int gradeToSign, int gradeToExecute )
 	:	_name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
@@ -14,7 +16,20 @@ Form::Form( std::string name, int gradeToSign, int gradeToExecute )
 	_isSigned = false;
 }
 
+Form::Form( const Form& copy )
+	: _name(copy._name), _gradeToSign(copy._gradeToSign), _gradeToExecute(copy._gradeToExecute)
+{
+	_isSigned = copy._isSigned;
+}
+
 Form::~Form() {}
+
+Form& Form::operator=( const Form& other )
+{
+	if (this != &other)
+		this->_isSigned = other._isSigned;
+	return (*this);
+}
 
 std::string Form::getName() const
 {

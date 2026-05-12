@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+Bureaucrat::Bureaucrat() : _name("default"), _grade(150) {}
+
 Bureaucrat::Bureaucrat( std::string name, int grade )
 	: _name(name), _grade(grade)
 {
@@ -13,7 +15,19 @@ Bureaucrat::Bureaucrat( std::string name, int grade )
 		throw GradeTooLowException();
 }
 
+Bureaucrat::Bureaucrat( const Bureaucrat& copy ) : _name(copy._name)
+{
+	this->_grade = copy._grade;
+}
+
 Bureaucrat::~Bureaucrat() {}
+
+Bureaucrat& Bureaucrat::operator=( const Bureaucrat& other )
+{
+	if (this != &other)
+		this->_grade = other._grade;
+	return (*this);
+}
 
 std::string Bureaucrat::getName() const
 {

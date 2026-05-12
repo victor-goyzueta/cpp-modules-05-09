@@ -8,8 +8,8 @@ int main()
 	try
 	{
 		Bureaucrat a;
-		Bureaucrat b(a);
-		Bureaucrat c ("Bob", 1);
+		Bureaucrat b("Bob", 1);
+		Bureaucrat c(b);
 
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;

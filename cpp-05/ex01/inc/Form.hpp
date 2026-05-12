@@ -17,8 +17,12 @@ class Form
 		int const			_gradeToExecute;
 
 	public:
+		Form();
 		Form( std::string name, int gradeToSign, int gradeToExecute );
+		Form( const Form& copy );
 		~Form();
+
+		Form& operator=( const Form& form );
 
 		std::string	getName() const;
 		bool		getIsSigned() const;
