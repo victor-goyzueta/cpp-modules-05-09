@@ -6,7 +6,7 @@ CXXFLAGS	+= -I inc -MMD -MP
 
 SRC			=	main.cpp			\
 				src/Bureaucrat.cpp	\
-				src/Form.cpp		\	
+				src/Form.cpp		\
 
 
 OBJ			= $(SRC:.cpp=.o)
