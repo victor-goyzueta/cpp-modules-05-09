@@ -4,14 +4,17 @@
 # include <iostream>
 # include <string>
 
-class ShrubberyCreationForm
-{
-	private:
-		/* data */
+# include "AForm.hpp"
 
+class ShrubberyCreationForm : public AForm
+{
 	public:
-		ShrubberyCreationForm(/* args */);
+		ShrubberyCreationForm();
+		ShrubberyCreationForm( std::string& target );
+		ShrubberyCreationForm( const ShrubberyCreationForm& copy );
 		~ShrubberyCreationForm();
+
+		ShrubberyCreationForm& operator=( const ShrubberyCreationForm& other );
 };
 
 #endif
