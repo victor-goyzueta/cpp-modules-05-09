@@ -5,7 +5,7 @@
 #include <string>
 
 AForm::AForm()
-	: _name("deafult"), _gradeToSign(1), _gradeToExecute(1), _target("unknown") {}
+	: _name("deafult"), _gradeToSign(1), _gradeToExecute(1), _target("default") {}
 
 AForm::AForm( std::string name, int gradeToSign, int gradeToExecute, std::string target )
 	:	_name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute), _target(target)
