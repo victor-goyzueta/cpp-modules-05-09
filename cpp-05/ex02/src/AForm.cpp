@@ -4,8 +4,11 @@
 #include <iostream>
 #include <string>
 
-AForm::AForm( std::string name, int gradeToSign, int gradeToExecute )
-	:	_name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+AForm::AForm()
+	: _name("deafult"), _gradeToSign(1), _gradeToExecute(1), _target("unknown") {}
+
+AForm::AForm( std::string name, int gradeToSign, int gradeToExecute, std::string target )
+	:	_name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute), _target(target)
 {
 	if (_gradeToSign < 1 || _gradeToExecute < 1)
 		throw (GradeTooHighException());
@@ -14,7 +17,21 @@ AForm::AForm( std::string name, int gradeToSign, int gradeToExecute )
 	_isSigned = false;
 }
 
+AForm::AForm( const AForm& copy )
+	:	_name(copy._name), _gradeToSign(copy._gradeToSign),
+		_gradeToExecute(copy._gradeToExecute), _target(copy._target)
+{
+	_isSigned = copy._isSigned;
+}
+
 AForm::~AForm() {}
+
+AForm& AForm::operator=( const AForm& other )
+{
+	if (this != &other)
+		_isSigned = other._isSigned;
+	return (*this);
+}
 
 std::string AForm::getName() const
 {
@@ -34,6 +51,11 @@ int AForm::getGradeToSign() const
 int AForm::getGradeToExecute() const
 {
 	return (_gradeToExecute);
+}
+
+std::string AForm::getTarget() const
+{
+	return (_target);
 }
 
 void AForm::beSigned( Bureaucrat& bureaucrat )

@@ -15,7 +15,7 @@ class AForm
 		bool				_isSigned;
 		int const			_gradeToSign;
 		int const			_gradeToExecute;
-		std::string			_target;
+		std::string const	_target;
 
 	public:
 		AForm();
@@ -29,6 +29,7 @@ class AForm
 		bool		getIsSigned() const;
 		int 		getGradeToSign() const;
 		int			getGradeToExecute() const;
+		std::string	getTarget() const;
 
 		void	beSigned( Bureaucrat& bureaucrat );
 
