@@ -6,15 +6,15 @@
 
 # include "AForm.hpp"
 
-class PresidentialPardonRequestForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	public:
-		PresidentialPardonRequestForm();
-		PresidentialPardonRequestForm( std::string& target );
-		PresidentialPardonRequestForm( const PresidentialPardonRequestForm& copy );
-		~PresidentialPardonRequestForm();
+		PresidentialPardonForm();
+		PresidentialPardonForm( const std::string& target );
+		PresidentialPardonForm( const PresidentialPardonForm& copy );
+		~PresidentialPardonForm();
 
-		PresidentialPardonRequestForm& operator=( const PresidentialPardonRequestForm& other );
+		PresidentialPardonForm& operator=( const PresidentialPardonForm& other );
 
 		void	execute( Bureaucrat const& executor ) const;
 		void	action() const;

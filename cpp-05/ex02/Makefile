@@ -7,9 +7,9 @@ CXXFLAGS	+= -I inc -MMD -MP
 SRC			=	main.cpp						\
 				src/Bureaucrat.cpp				\
 				src/AForm.cpp					\
-				src/ShrubberyCreationForm.hpp	\
-				src/RobotomyRequestForm.hpp		\
-				src/PresidentialPardonForm.hpp	\
+				src/ShrubberyCreationForm.cpp	\
+				src/RobotomyRequestForm.cpp		\
+				src/PresidentialPardonForm.cpp	\
 
 
 OBJ			= $(SRC:.cpp=.o)
