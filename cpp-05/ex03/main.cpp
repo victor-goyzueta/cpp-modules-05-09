@@ -9,6 +9,8 @@
 #include <fstream>
 #include <cstdlib>
 
+/*seg fault in operator = from AForm*/
+
 int main() {
     srand(time(0));
 
