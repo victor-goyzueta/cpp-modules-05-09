@@ -9,12 +9,14 @@
 #include <fstream>
 #include <cstdlib>
 
-/*seg fault in operator = from AForm*/
+/*seg fault in operator= from AForm*/
 
-int main() {
+int main()
+{
     srand(time(0));
 
-    try {
+    try
+    {
         Bureaucrat miguel("Miguel", 1);
         Intern ryan;
 
@@ -24,13 +26,15 @@ int main() {
         miguel.executeForm(*form);
         delete form;
     }
-    catch (std::exception& e) {
+    catch (std::exception& e)
+    {
         std::cerr << e.what() << std::endl;
     }
 
     std::cout << std::endl;
 
-    try {
+    try
+    {
         Bureaucrat miguel("Miguel", 1);
         Intern ryan;
 
@@ -40,40 +44,44 @@ int main() {
         miguel.executeForm(*form);
         delete form;
     }
-    catch (std::exception& e) {
+    catch (std::exception& e)
+    {
         std::cerr << e.what() << std::endl;
     }
 
     std::cout << std::endl;
 
-    try {
+    try
+    {
         Bureaucrat miguel("Miguel", 1);
         Intern ryan;
 
-        AForm* form = ryan.makeForm( "PresidentialPardonForm", "Ines");
+        AForm* form = ryan.makeForm("PresidentialPardonForm", "Ines");
 
         miguel.signForm(*form);
         miguel.executeForm(*form);
         delete form;
     }
-    catch (std::exception& e) {
+    catch (std::exception& e)
+    {
         std::cerr << e.what() << std::endl;
     }
 
     std::cout << std::endl;
 
-    try {
+    try
+    {
         Bureaucrat miguel("Miguel", 1);
         Intern ryan;
 
-        AForm* form = ryan.makeForm( "asfds", "wiwi");
+        AForm* form = ryan.makeForm("asfds", "wiwi");
 
         miguel.signForm(*form);
         miguel.executeForm(*form);
         delete form;
     }
-    catch (std::exception& e) {
+    catch (std::exception& e)
+    {
         std::cerr << e.what() << std::endl;
     }
-
 }

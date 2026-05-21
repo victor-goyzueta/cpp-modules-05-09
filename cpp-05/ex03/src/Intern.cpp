@@ -36,14 +36,11 @@ AForm* Intern::makeForm( std::string const& name, std::string const& target )
 				case 1:
 					return new RobotomyRequestForm(target);
 				case 2:
-					return new PresidentialPardonForm(target);
-				default:
-					throw InvalidFormException();
+					return new PresidentialPardonForm(target);	
 			}
 		}
 	}
-	std::cerr << "Intern: unknown form name \"" << name << "\"" << std::endl;
-	return (NULL);
+	throw InvalidFormException();
 }
 
 const char *Intern::InvalidFormException::what() const throw()
