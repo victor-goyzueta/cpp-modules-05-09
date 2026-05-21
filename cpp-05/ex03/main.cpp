@@ -13,7 +13,7 @@
 
 int main()
 {
-    srand(time(0));
+    srand(time(NULL));
 
     try
     {
