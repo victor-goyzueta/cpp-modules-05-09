@@ -8,16 +8,16 @@
 
 #define signReq	25
 #define execReq	5
-#define RQF	"PresidentialPardonForm"
+#define PPF	"PresidentialPardonForm"
 
 PresidentialPardonForm::PresidentialPardonForm()
 	: AForm("default", signReq, execReq, "default") {}
 
 PresidentialPardonForm::PresidentialPardonForm( const std::string& target )
-	: AForm( RQF, signReq, execReq, target ) {}
+	: AForm( PPF, signReq, execReq, target ) {}
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm& copy )
-	: AForm( RQF, signReq, execReq, copy.getTarget() ) {}
+	: AForm( PPF, signReq, execReq, copy.getTarget() ) {}
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
