@@ -5,9 +5,9 @@
 # include <cstddef>
 
 template <typename T>
-void	iter(T *array, size_t array_length, void (*func)(T &))
+void	iter(T *array, const size_t length, void (*func)(T &))
 {
-	for (size_t i = 0; i < array_length; ++i)
+	for (size_t i = 0; i < length; ++i)
 		func(array[i]);
 }
 
