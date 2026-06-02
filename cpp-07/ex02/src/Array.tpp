@@ -4,15 +4,6 @@
 #include <stdexcept>
 
 template <typename T>
-Array<T>::~Array()
-{
-	std::cout << "Destructor called" << std::endl;
-	if (this->content != NULL) {
-		delete[] this->content;
-	}
-}
-
-template <typename T>
 Array<T>::Array()
 {
 	this->content = NULL;
@@ -20,33 +11,45 @@ Array<T>::Array()
 }
 
 template <typename T>
-Array<T>::Array(unsigned int size)
+Array<T>::Array( unsigned int size )
 {
 	this->content = new T[size]();
 	this->_size = size;
 }
 
 template <typename T>
-Array<T>::Array(const Array& copy)
+Array<T>::Array( const Array& copy )
 {
 	this->_size = copy.size();
 	this->content = new T[this->_size];
 
-	for (unsigned int i = 0; i < this->_size; i++) {
+	for (unsigned int i = 0; i < this->_size; i++)
+	{
 		this->content[i] = copy[i];
 	}
 }
 
 template <typename T>
-Array<T>& Array<T>::operator=(const Array& other)
+Array<T>::~Array()
 {
-	if (this != &other) {
+	if (this->content != NULL)
+	{
+		delete[] this->content;
+	}
+}
+
+template <typename T>
+Array<T>& Array<T>::operator=( const Array& other )
+{
+	if (this != &other)
+	{
 		delete[] this->content;
 
 		this->_size = other.size();
 		this->content = new T[this->_size];
 
-		for (unsigned int i = 0; i < this->_size; i++) {
+		for (unsigned int i = 0; i < this->_size; i++)
+		{
 			this->content[i] = other.content[i];
 		}
 	}
@@ -55,9 +58,10 @@ Array<T>& Array<T>::operator=(const Array& other)
 
 
 template <typename T>
-T& Array<T>::operator[](unsigned int index)
+T& Array<T>::operator[]( unsigned int index )
 {
-	if (index >= this->_size) {
+	if (index >= this->_size)
+	{
 		throw std::out_of_range("Index out of range");
 	}
 	return this->content[index];
@@ -66,7 +70,8 @@ T& Array<T>::operator[](unsigned int index)
 template <typename T>
 const T& Array<T>::operator[](unsigned int index) const
 {
-	if (index >= this->_size) {
+	if (index >= this->_size)
+	{
 		throw std::out_of_range("Index out of range");
 	}
 	return this->content[index];
