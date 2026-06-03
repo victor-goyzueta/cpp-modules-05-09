@@ -7,19 +7,20 @@ class Array
 {
     public:
         Array ();
-        Array ( unsigned int size );
+        Array ( unsigned int n );
 		Array ( const Array& copy );
         virtual ~Array ();
 
 		Array& operator=( const Array& other );
 
 		T& operator[]( unsigned int index );
-		const T& operator[]( unsigned int index ) const;
+		T& operator[]( unsigned int index ) const;
+
 		unsigned int size() const;
 
     private:
-		T* content;
-		unsigned int _size;
+		T* 				_data;
+		unsigned int	_size;
 		
 };
 
