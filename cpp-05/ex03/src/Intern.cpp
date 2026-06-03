@@ -22,25 +22,36 @@ Intern& Intern::operator=( const Intern& other )
 
 Intern::~Intern() {}
 
-AForm* Intern::makeForm( std::string const& name, std::string const& target )
+AForm	*Intern::makeForm(std::string const& formName, std::string const& target)
 {
-	std::string knowTypes[] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	std::string names[] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	AForm *(Intern::*funcs[])(std::string const&) =
+		{ &Intern::createShrubbery, &Intern::createRobotomy, &Intern::createPresidential };
 	for (size_t i = 0; i < 3; i++)
 	{
-		if (knowTypes[i] == name)
+		if (formName == names[i])
 		{
-			switch (i)
-			{
-				case 0:
-					return new ShrubberyCreationForm(target);
-				case 1:
-					return new RobotomyRequestForm(target);
-				case 2:
-					return new PresidentialPardonForm(target);	
-			}
+			AForm *form = (this->*funcs[i])(target);
+			std::cout << "Intern creates " << formName << std::endl;
+			return (form);
 		}
 	}
 	throw InvalidFormException();
+}
+
+AForm* Intern::createShrubbery(std::string const& target)
+{
+	return (new ShrubberyCreationForm(target));
+}
+
+AForm* Intern::createRobotomy(std::string const& target)
+{
+	return (new RobotomyRequestForm(target));
+}
+
+AForm* Intern::createPresidential(std::string const& target)
+{
+	return (new PresidentialPardonForm(target));
 }
 
 const char *Intern::InvalidFormException::what() const throw()

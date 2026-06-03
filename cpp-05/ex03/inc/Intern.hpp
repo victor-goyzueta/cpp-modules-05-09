@@ -8,11 +8,16 @@
 
 class Intern
 {
+	private:
+		AForm*	createShrubbery( std::string const& target );
+		AForm*	createRobotomy( std::string const& target );
+		AForm*	createPresidential( std::string const& target );
+	
 	public:
 		Intern();
 		Intern( const Intern& copy );
 		~Intern();
-
+		
 		Intern& operator=( const Intern& other );
 
 		AForm*	makeForm( std::string const& name, std::string const& targetForm );

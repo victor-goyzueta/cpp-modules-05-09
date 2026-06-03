@@ -18,7 +18,7 @@ int main()
         Bureaucrat miguel("Miguel", 1);
         Intern ryan;
 
-        AForm* form = ryan.makeForm("ShrubberyCreationForm", "Ines");
+        AForm* form = ryan.makeForm("ShrubberyCreationForm", "Backyard");
 
         miguel.signForm(*form);
         miguel.executeForm(*form);
@@ -36,7 +36,7 @@ int main()
         Bureaucrat miguel("Miguel", 1);
         Intern ryan;
 
-        AForm* form = ryan.makeForm("RobotomyRequestForm", "Ines");
+        AForm* form = ryan.makeForm("RobotomyRequestForm", "Bender");
 
         miguel.signForm(*form);
         miguel.executeForm(*form);
@@ -54,7 +54,7 @@ int main()
         Bureaucrat miguel("Miguel", 1);
         Intern ryan;
 
-        AForm* form = ryan.makeForm("PresidentialPardonForm", "Ines");
+        AForm* form = ryan.makeForm("PresidentialPardonForm", "Marvin");
 
         miguel.signForm(*form);
         miguel.executeForm(*form);
