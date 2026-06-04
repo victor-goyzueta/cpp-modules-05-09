@@ -21,11 +21,10 @@ int main()
         std::cout << secretForm << std::endl;
         karen.signForm(secretForm);
         std::cout << secretForm << std::endl;
-
     }
-	catch (std::exception &e) 
+	catch(const std::exception& e)
 	{
-        std::cerr << "Caught error in main: " << e.what() << std::endl;
-    }
+		std::cerr << e.what() << std::endl;
+	}
     return (0);
 }
