@@ -21,7 +21,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	
 	try
@@ -35,6 +35,7 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+
 	try
 	{
 		Bureaucrat	b2("Bob", 151);
@@ -44,6 +45,7 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+
 	try
 	{
 		Bureaucrat	b3("Foo", 2);
@@ -57,6 +59,6 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	
+
 	return (0);
 }
