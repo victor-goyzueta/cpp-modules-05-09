@@ -6,7 +6,7 @@
 template <typename T>
 Array<T>::Array()
 {
-	this->_data = NULL;
+	this->_data = new T[0]();
 	this->_size = 0;
 }
 
