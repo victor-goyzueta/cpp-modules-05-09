@@ -27,7 +27,8 @@ static bool		isPseudoDouble(const std::string &s)
 
 static bool		isCharLiteral(const std::string &s)
 {
-	return (s.length() == 3 && s[0] == '\'' && s[2] == '\'');
+	return (s.length() == 1 && !std::isdigit(s[0]));
+	//return (s.length() == 3 && s[0] == '\'' && s[2] == '\'');
 }
 
 static bool		isIntLiteral(const std::string &s)
@@ -206,7 +207,7 @@ double	parseToDouble(const std::string &literal, LiteralType type)
 	switch (type)
 	{
 		case CHAR:
-			return static_cast<double>(literal[1]);
+			return static_cast<double>(literal[0]);
 		case INT:
 			return static_cast<double>(std::strtod(literal.c_str(), NULL));
 		case FLOAT:
