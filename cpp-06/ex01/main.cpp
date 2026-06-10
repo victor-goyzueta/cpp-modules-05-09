@@ -28,5 +28,6 @@ int main()
 			std::cout << "SUCCESS: The deserialized pointer is equal to the original pointer." << std::endl;
 		else
 			std::cout << "ERROR: The pointers are different." << std::endl;
+
 		return 0;
 }
