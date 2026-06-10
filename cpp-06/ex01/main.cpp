@@ -5,6 +5,7 @@
 int main()
 {
 		std::cout << "CREATING DATA" << std::endl;
+
 		Data	data;
 		data.s = "Hello 42";
 		data.number = 42;
@@ -15,8 +16,7 @@ int main()
 
 		std::cout << "SERIALIZATING" << std::endl;
 		uintptr_t	raw = Serializer::serialize(&data);
-		std::cout << "Serialized (memory address): "
-			<< raw << std::endl;
+		std::cout << "Serialized (memory address): " << raw << std::endl;
 
 		std::cout << "DESEREALIZATING" << std::endl;
 		Data*	deserealized = Serializer::deserialize(raw);
