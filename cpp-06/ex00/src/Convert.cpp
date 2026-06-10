@@ -28,7 +28,6 @@ static bool		isPseudoDouble(const std::string &s)
 static bool		isCharLiteral(const std::string &s)
 {
 	return (s.length() == 1 && !std::isdigit(s[0]));
-	//return (s.length() == 3 && s[0] == '\'' && s[2] == '\'');
 }
 
 static bool		isIntLiteral(const std::string &s)
