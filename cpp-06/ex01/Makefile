@@ -4,7 +4,8 @@ CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 CXXFLAGS	+= -I inc -MMD -MP
 
-SRC			=	main.cpp	\
+SRC			=	main.cpp			\
+				src/Serializer.cpp	\
 
 
 OBJ			= $(SRC:.cpp=.o)
