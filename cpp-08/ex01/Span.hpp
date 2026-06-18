@@ -2,6 +2,8 @@
 # define SPAN_HPP
 
 # include <iostream>
+# include <limits>
+# include <climits>
 # include <iterator>
 # include <algorithm>
 # include <vector>
@@ -20,7 +22,7 @@ class Span
 		Span( const Span& copy );
 		~Span();
 
-		Span& operator=( const &Span& other );
+		Span& operator=( const Span& other );
 		
 		void	addNumber( int number );
 
@@ -29,14 +31,14 @@ class Span
 		{
 			unsigned int	distance = std::distance(begin, end);
 			if (_numbers.size() + distance > _maxSize)
-				throw std::runtime_error("Cannot add range: Span will overflow.");
+				throw std::runtime_error("Cannot add range: Span will overflow");
 			_numbers.insert(_numbers.end(), begin, end);
 		}
 
-		unsigned int	shortesSpan() const;
+		unsigned int	shortestSpan() const;
 		unsigned int	longestSpan() const;
+
 		void			printNumbers() const;
 };
 
 #endif
-
