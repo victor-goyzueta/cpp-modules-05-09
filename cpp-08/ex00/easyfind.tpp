@@ -23,3 +23,4 @@ typename T::const_iterator easyfind(const T& container, const int value)
 		throw std::out_of_range("Value not found");
 	return it;
 }
+ 

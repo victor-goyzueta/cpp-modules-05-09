@@ -10,10 +10,12 @@ void	printContainer( const T& container )
 	typename T::const_iterator it = container.begin();
 	typename T::const_iterator end = container.end();
 
-	std::cout << "[ ";
 	for (; it != end; ++it)
-		std::cout << *it << " ";
-	std::cout << "]" << std::endl;
+	{
+		std::cout << "[" << *it << "]";
+
+	}
+	std::cout << std::endl;
 }
 
 int	main()
