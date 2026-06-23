@@ -1,5 +1,12 @@
 #include "Span.hpp"
 
+void	printNumbers( const Span& sp )
+{
+	for (size_t i = 0; i < sp.getNumbers().size(); i++)
+		std::cout << sp.getNumbers()[i] << " ";
+	std::cout << std::endl;
+}
+
 int	main()
 {
 	std::cout << "TEST 1: SUBJECT TEST" << std::endl;
@@ -74,7 +81,7 @@ int	main()
 	try
 	{
 		sp5.addRange(values.begin(), values.end());
-		sp5.printNumbers();
+		printNumbers(sp5);
 		std::cout << "Shortest span: " << sp5.shortestSpan() << std::endl;
 		std::cout << "Longest span: " << sp5.longestSpan() << std::endl;
 	}

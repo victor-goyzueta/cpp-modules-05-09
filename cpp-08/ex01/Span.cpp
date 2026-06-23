@@ -19,6 +19,11 @@ Span& Span::operator=( const Span& other )
 
 Span::~Span() {}
 
+std::vector<int>	Span::getNumbers() const
+{
+	return (_numbers);
+}
+
 void	Span::addNumber( int number )
 {
 	if (_numbers.size() >= _maxSize)
@@ -51,11 +56,4 @@ unsigned int	Span::longestSpan() const
 	int	maxValue = *std::max_element(_numbers.begin(), _numbers.end());
 
 	return static_cast<unsigned int>(maxValue - minValue);
-}
-
-void	Span::printNumbers() const
-{
-	for (size_t i = 0; i < _numbers.size(); i++)
-		std::cout << _numbers[i] << " ";
-	std::cout << std::endl;
 }

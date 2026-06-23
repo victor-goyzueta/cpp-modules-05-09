@@ -23,6 +23,8 @@ class Span
 		~Span();
 
 		Span& operator=( const Span& other );
+
+		std::vector<int>	getNumbers() const;
 		
 		void	addNumber( int number );
 
@@ -37,8 +39,6 @@ class Span
 
 		unsigned int	shortestSpan() const;
 		unsigned int	longestSpan() const;
-
-		void			printNumbers() const;
 };
 
 #endif
