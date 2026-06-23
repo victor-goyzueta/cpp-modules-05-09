@@ -27,15 +27,7 @@ class Span
 		std::vector<int>	getNumbers() const;
 		
 		void	addNumber( int number );
-
-		template <typename Iterator>
-		void	addRange( Iterator begin, Iterator end )
-		{
-			unsigned int	distance = std::distance(begin, end);
-			if (_numbers.size() + distance > _maxSize)
-				throw std::runtime_error("Cannot add range: Span will overflow");
-			_numbers.insert(_numbers.end(), begin, end);
-		}
+		void	addRange( const std::vector<int> vec );
 
 		unsigned int	shortestSpan() const;
 		unsigned int	longestSpan() const;

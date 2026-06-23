@@ -31,6 +31,14 @@ void	Span::addNumber( int number )
 	_numbers.push_back(number);
 }
 
+void	Span::addRange( const std::vector<int> vec )
+{
+	unsigned int	distance = std::distance(vec.begin(), vec.end());
+	if (_numbers.size() + distance > _maxSize)
+		throw std::runtime_error("Cannot add range: Span will overflow");
+	_numbers.insert(_numbers.end(), vec.begin(), vec.end());
+}
+
 unsigned int	Span::shortestSpan() const
 {
 	if  (_numbers.size() < 2)

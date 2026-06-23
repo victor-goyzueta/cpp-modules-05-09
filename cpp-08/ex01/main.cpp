@@ -80,7 +80,7 @@ int	main()
 
 	try
 	{
-		sp5.addRange(values.begin(), values.end());
+		sp5.addRange(values);
 		printNumbers(sp5);
 		std::cout << "Shortest span: " << sp5.shortestSpan() << std::endl;
 		std::cout << "Longest span: " << sp5.longestSpan() << std::endl;
@@ -100,7 +100,7 @@ int	main()
 	values.push_back(34);
 	try
 	{
-		sp6.addRange(values.begin(), values.end());
+		sp6.addRange(values);
 	}
 	catch(const std::exception& e)
 	{
@@ -116,7 +116,7 @@ int	main()
 	
 	try
 	{
-		sp7.addRange(nums.begin(), nums.end());
+		sp7.addRange(nums);
 		std::cout << "Shortest span: " << sp7.shortestSpan() << std::endl;
 		std::cout << "Longest span: " << sp7.longestSpan() << std::endl;
 	}
