@@ -3,27 +3,37 @@
 void	printNumbers( const Span& sp )
 {
 	for (size_t i = 0; i < sp.getNumbers().size(); i++)
-		std::cout << sp.getNumbers()[i] << " ";
+		std::cout << "[" <<sp.getNumbers()[i] << "] ";
 	std::cout << std::endl;
 }
 
 int	main()
 {
-	std::cout << "TEST 1: SUBJECT TEST" << std::endl;
-	Span 	sp = Span(5);
-	sp.addNumber(6);
-	sp.addNumber(3);
-	sp.addNumber(17);
-	sp.addNumber(9);
-	sp.addNumber(11);
-	
-	std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
-	std::cout << "Longest span: " << sp.longestSpan() << std::endl << std::endl;
-
-	std::cout << "TEST 2: FULL SPAN" << std::endl;
-	Span	sp2(3);
 	try
 	{
+		std::cout << "TEST 1: SUBJECT TEST" << std::endl;
+		Span 	sp1 = Span(5);
+		sp1.addNumber(6);
+		sp1.addNumber(3);
+		sp1.addNumber(17);
+		sp1.addNumber(9);
+		sp1.addNumber(11);
+
+		printNumbers(sp1);
+		
+		std::cout << "Shortest span: " << sp1.shortestSpan() << std::endl;
+		std::cout << "Longest span: " << sp1.longestSpan() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr <<"Error: " << e.what() << std::endl;
+	}
+
+	try
+	{
+		std::cout << "\nTEST 2: FULL SPAN" << std::endl;
+		Span	sp2(3);
+		
 		sp2.addNumber(1);
 		sp2.addNumber(2);
 		sp2.addNumber(3);
@@ -33,12 +43,12 @@ int	main()
 	{
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
-	std::cout << std::endl;
 
-	std::cout << "TEST 3: NOT ENOUGH NUMBERS" << std::endl;
+	std::cout << "\nTEST 3: NOT ENOUGH NUMBERS" << std::endl;
 	Span	sp3(10);
+
 	try
-	{
+	{	
 		sp3.addNumber(42);
 		std::cout << "Shortest span: " << sp3.shortestSpan() << std::endl;
 	}
@@ -55,20 +65,25 @@ int	main()
 	{
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
-	std::cout << std::endl;
 
-	std::cout << "TEST 4: DUPLICATE NUMBERS" << std::endl;
-	Span	sp4(5);
-	sp4.addNumber(10);
-	sp4.addNumber(10);
-	sp4.addNumber(20);
-	sp4.addNumber(30);
-	sp4.addNumber(40);
-	std::cout << "Shortest span: " << sp4.shortestSpan() << std::endl;
-	std::cout << "Longest span: " << sp4.longestSpan() << std::endl;
-	std::cout << std::endl;
+	try
+	{
+		std::cout << "\nTEST 4: DUPLICATE NUMBERS" << std::endl;
+		Span	sp4(5);
+		sp4.addNumber(10);
+		sp4.addNumber(10);
+		sp4.addNumber(20);
+		sp4.addNumber(30);
+		sp4.addNumber(40);
+		std::cout << "Shortest span: " << sp4.shortestSpan() << std::endl;
+		std::cout << "Longest span: " << sp4.longestSpan() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
+	}
 	
-	std::cout << "TEST 5: RANGE TEST" << std::endl;
+	std::cout << "\nTEST 5: RANGE TEST" << std::endl;
 	Span	sp5(10);
 
 	std::vector<int>	values;
@@ -113,10 +128,11 @@ int	main()
 	std::vector<int>	nums;
 	for (size_t i = 0; i < 10000; i++)
 		nums.push_back(i);
-	
+		
 	try
 	{
 		sp7.addRange(nums);
+		printNumbers(sp7);
 		std::cout << "Shortest span: " << sp7.shortestSpan() << std::endl;
 		std::cout << "Longest span: " << sp7.longestSpan() << std::endl;
 	}
