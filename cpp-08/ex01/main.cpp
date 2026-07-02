@@ -46,10 +46,11 @@ int	main()
 
 	std::cout << "\nTEST 3: NOT ENOUGH NUMBERS" << std::endl;
 	Span	sp3(10);
+	sp3.addNumber(42);
+	printNumbers(sp3);
 
 	try
 	{	
-		sp3.addNumber(42);
 		std::cout << "Shortest span: " << sp3.shortestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
@@ -75,6 +76,7 @@ int	main()
 		sp4.addNumber(20);
 		sp4.addNumber(30);
 		sp4.addNumber(40);
+		printNumbers(sp4);
 		std::cout << "Shortest span: " << sp4.shortestSpan() << std::endl;
 		std::cout << "Longest span: " << sp4.longestSpan() << std::endl;
 	}
@@ -102,28 +104,29 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << "Error: " << e.what() << std::endl;
 	}
-	std::cout << std::endl;
 	
-	std::cout << "TEST 6: RANGE OVERFLOW" << std::endl;
+	std::cout << "\nTEST 6: RANGE OVERFLOW" << std::endl;
 	Span	sp6(3);
-	
+	values.clear();
+
 	values.push_back(3);
 	values.push_back(5);
 	values.push_back(9);
 	values.push_back(34);
+
 	try
 	{
 		sp6.addRange(values);
+		printNumbers(sp6);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
-	std::cout << std::endl;
 	
-	std::cout << "TEST 7: 10000 NUMBERS" << std::endl;
+	std::cout << "\nTEST 7: 10000 NUMBERS" << std::endl;
 	Span	sp7(10000);
 	std::vector<int>	nums;
 	for (size_t i = 0; i < 10000; i++)
