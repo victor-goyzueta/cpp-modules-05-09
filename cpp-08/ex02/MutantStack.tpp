@@ -1,5 +1,11 @@
 #include "MutantStack.hpp"
 
+# include <iostream>
+# include <stack>
+# include <vector>
+# include <list>
+# include <deque>
+
 template <typename T>
 MutantStack<T>::MutantStack()
 	: std::stack<T>() {}
