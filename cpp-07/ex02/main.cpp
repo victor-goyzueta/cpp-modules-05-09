@@ -24,7 +24,8 @@ int main()
 		Array<float> test(5);
 
 		std::cout << test.size() << std::endl;
-		for (unsigned int i = 0; i < 5; i++) {
+		for (unsigned int i = 0; i < 5; i++)
+		{
 			std::cout << test[i] << std::endl;
 		}
 	}
