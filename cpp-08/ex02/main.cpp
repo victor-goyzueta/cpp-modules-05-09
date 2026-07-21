@@ -45,7 +45,7 @@ int main()
 // 	mstack.push_back(5);
 // 	mstack.push_back(17);
 
-// 	std::cout << mstack[1] << std::endl;
+// 	std::cout << mstack.back() << std::endl;
 
 // 	mstack.pop_back();
 
@@ -69,7 +69,7 @@ int main()
 // 		++it;
 // 	}
 
-// 	std::stack<int> s(mstack);
+// 	std::stack< int, std::deque<int> > s(mstack);
 
 // 	return 0;
 // }
