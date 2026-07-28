@@ -4,8 +4,8 @@ CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 CXXFLAGS	+= -I inc -MMD -MP
 
-SRC			=	main.cpp			\
-				BitcoinExchange.cpp	\
+SRC			=	main.cpp				\
+				src/BitcoinExchange.cpp	\
 
 
 OBJ			= $(SRC:.cpp=.o)

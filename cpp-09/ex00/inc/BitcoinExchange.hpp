@@ -7,9 +7,6 @@
 # include <stdexcept>
 # include <fstream>
 # include <sstream>
-// # include <cstdlib>
-// # include <iomanip>
-// # include <limits>
 
 class BitcoinExchange
 {
@@ -18,6 +15,14 @@ class BitcoinExchange
 		BitcoinExchange& operator=( const BitcoinExchange& other );
 		
 		std::map<std::string, double>	_database;
+		
+		bool	isValidDate( const std::string& date ) const;
+		bool	isLeapYear( int year ) const;
+		bool	isValidValue( double value ) const;
+
+		void	calculateAndDisplay( const std::string& date, double value ) const;
+
+		double	getPrice( const std::string& date ) const;
 	
 	public:
 		BitcoinExchange();
