@@ -18,7 +18,7 @@ BitcoinExchange& BitcoinExchange::operator=( const BitcoinExchange& other )
 
 BitcoinExchange::~BitcoinExchange() {}
 
-void	BitcoinExchange::loadDatabase( const std::string &filename )
+void	BitcoinExchange::loadDataBase( const std::string &filename )
 {
 	std::ifstream	file(filename.c_str());
 	std::string		line;
