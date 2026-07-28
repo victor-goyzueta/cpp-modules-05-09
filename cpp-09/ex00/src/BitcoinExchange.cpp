@@ -108,8 +108,8 @@ double BitcoinExchange::getPrice(const std::string &date) const
     {
         return it->second;
     }
-    it = _database.lower_bound(date); // busca el primer eemento >= date
-    if (it == _database.begin()) // no hay fecha anterior, ERROR.
+    it = _database.lower_bound(date);
+    if (it == _database.begin())
         return -1;
     it--;
     return it->second;
