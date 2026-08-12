@@ -44,7 +44,7 @@ void	BitcoinExchange::loadDataBase( const std::string &filename )
 
 		char *end;
 		price = std::strtod(priceStr.c_str(), &end);
-		if (!(*end != '\0' && *end != '\n' && *end != '\r'))
+		if (*end == '\0' || *end == '\n' || *end == '\r')
 			_database[date] = price;
 	}
 	file.close();
