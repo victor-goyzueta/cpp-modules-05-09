@@ -1,10 +1,11 @@
-NAME		= ex01
+NAME		= RPN
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 CXXFLAGS	+= -I inc -MMD -MP
 
 SRC			=	main.cpp	\
+				src/RPN.cpp	\
 
 
 OBJ			= $(SRC:.cpp=.o)
