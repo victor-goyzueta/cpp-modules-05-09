@@ -1,10 +1,11 @@
-NAME		= ex02
+NAME		= PmergeMe
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 CXXFLAGS	+= -I inc -MMD -MP
 
-SRC			=	main.cpp	\
+SRC			=	main.cpp			\
+				src/PmergeMe.cpp	\
 
 
 OBJ			= $(SRC:.cpp=.o)
