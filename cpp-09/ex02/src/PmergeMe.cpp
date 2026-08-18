@@ -103,9 +103,9 @@ void	PmergeMe::sortDeque( std::deque<int>& deq )
 void	PmergeMe::process( char **argv )
 {
 	std::vector<int>	input = parseInput(argv);
-
 	print(input, "Before: ");
 
+	{
 	std::vector<int>	vec = input;
 	clock_t	startVec = clock();
 	sortVector(vec);
@@ -118,7 +118,8 @@ void	PmergeMe::process( char **argv )
 	std::cout << "Time to process a range of " << vec.size()
 	        << " elements with std::vector : "
 	    	<< timeVec << " us" << std::endl;
-
+	}
+	{
 	std::deque<int> deq(input.begin(), input.end());
 
 	clock_t startDeq = clock();
@@ -130,4 +131,5 @@ void	PmergeMe::process( char **argv )
 	std::cout << "Time to process a range of " << deq.size()
 	    	<< " elements with std::deque : "
 	        << timeDeq << " us" << std::endl;
+	}
 }
